@@ -1,0 +1,54 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 104px;
+            height: 87px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page" style= "width:1000px; height:800px">
+        <div class="header" style="background-color: #FFFFFF">
+            <div class="title">
+            </div>
+            <div class="loginDisplay">
+                <img align="left" class="style1" src="Image/Logohit.jpg" /></div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/OEACustomers.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/wfrmConvertXMLtoEDI.aspx" Text="Containers" 
+                            Value="Containers"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/wfrmConvertXMLCStoEDI.aspx" 
+                            Text="General Cargo" Value="General Cargo"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/wfrmBookings.aspx" Text="Bookings" 
+                            Value="Bookings"></asp:MenuItem>
+                        <asp:MenuItem Text="Consignee" Value="Consignee" NavigateUrl="~/Consignee.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="OEA" Value="OEA" NavigateUrl="~/OEACustomers.aspx"></asp:MenuItem>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
